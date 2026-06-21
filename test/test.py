@@ -42,7 +42,7 @@ async def test_project(dut):
     dut.cs.value = 1
 
     # Test output
-    await ClockCycles(dut.clk, 1000)
+    await ClockCycles(dut.clk, 400)
 
 
     # Write pre register via SPI

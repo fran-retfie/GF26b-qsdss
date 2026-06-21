@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
-[*] Sun Jun 21 19:34:29 2026
+[*] Sun Jun 21 20:34:50 2026
 [*]
 [dumpfile] "/home/retfie/Documenti/HDL/GF26b-qsdss/test/tb.fst"
-[dumpfile_mtime] "Sun Jun 21 19:32:56 2026"
-[dumpfile_size] 1765
+[dumpfile_mtime] "Sun Jun 21 20:34:30 2026"
+[dumpfile_size] 50226
 [savefile] "/home/retfie/Documenti/HDL/GF26b-qsdss/test/tb.gtkw"
 [timestart] 0
 [size] 1920 1001
 [pos] -27 -24
-*-21.495594 720000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-21.495594 3380000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb.
 [treeopen] tb.user_project.
 [sst_width] 297
@@ -44,5 +44,11 @@ tb.user_project.rst_n
 tb.cs
 tb.mosi
 tb.sck
+@200
+-Modulators
+@28
+tb.user_project.sdm_0.ds_o
+@29
+tb.user_project.sdm_1.ds_o
 [pattern_trace] 1
 [pattern_trace] 0

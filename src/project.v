@@ -23,7 +23,7 @@ module tt_um_franretfie_top (
     ui_dd <= ui_d;
   end
 
-  wire [15:0] pre;
+  wire [15:0] pre_w;
 
   spi spi_0 (
     .sys_clk (clk),    
@@ -31,31 +31,45 @@ module tt_um_franretfie_top (
     .sck_i (ui_dd[0]), // SCK -> ui_in[0]
     .mosi_i (ui_dd[2]), // MOSI -> ui_in[21]  
     .cs_i (ui_dd[1]), // CS -> ui_in[1] 
-    .data_o (pre)
+    .data_o (pre_w)
   );
 
-  wire en_o;
+  wire en_w;
 
   prescaler pre_0 (
-    .pre_i (pre),
+    .pre_i (pre_w),
     .sys_clk (clk),   
     .rst_in (rst_n),
-    .en_o (en_o) 
+    .en_o (en_w) 
   );
 
-  wire [15:0] sin_o;
-  wire [15:0] cos_o;
+  wire [15:0] sin_w;
+  wire [15:0] cos_w;
 
   signal_generator sg_0 (
-      .en_i (en_o),    
+      .en_i (en_w),    
       .sys_clk (clk),    
       .rst_in (rst_n),   
-      .sin_o (sin_o),
-      .cos_o (cos_o)
+      .sin_o (sin_w),
+      .cos_o (cos_w)
+  );
+
+  deltasigma_modulator sdm_0 (
+    .clk (clk),
+    .rst_i (rst_n),
+    .sig_i (sin_w),
+    .ds_o (uo_out[0])
+  );
+
+  deltasigma_modulator sdm_1 (
+    .clk (clk),
+    .rst_i (rst_n),
+    .sig_i (cos_w),
+    .ds_o (uo_out[1])
   );
 
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = 0; 
+  assign uo_out[7:2]  = 0; 
   assign uio_out = 0;
   assign uio_oe  = 0;
 

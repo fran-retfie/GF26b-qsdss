@@ -18,7 +18,7 @@ assign x1 = x - (x >>> k_log2) + y;
 
 always @(posedge sys_clk or !rst_in) begin
     if(!rst_in) begin
-        x <= 16'h7123;
+        x <= 16'h7eff;
         y <= 16'h0000;
     end else begin
         if(en_i) begin

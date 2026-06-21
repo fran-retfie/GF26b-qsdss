@@ -14,7 +14,7 @@ module deltasigma_modulator (
         if(!rst_i) begin
             integ <= 17'h00000;
         end else begin
-            integ <= integ + sig_i - dac;
+            integ <= integ + ((sig_i - dac) >>> 1);
         end
     end
 

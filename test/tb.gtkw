@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
-[*] Sun Jun 21 17:15:57 2026
+[*] Sun Jun 21 19:34:29 2026
 [*]
 [dumpfile] "/home/retfie/Documenti/HDL/GF26b-qsdss/test/tb.fst"
-[dumpfile_mtime] "Sun Jun 21 17:10:18 2026"
-[dumpfile_size] 4147
+[dumpfile_mtime] "Sun Jun 21 19:32:56 2026"
+[dumpfile_size] 1765
 [savefile] "/home/retfie/Documenti/HDL/GF26b-qsdss/test/tb.gtkw"
 [timestart] 0
 [size] 1920 1001
 [pos] -27 -24
-*-21.495594 1780000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-21.495594 720000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb.
 [treeopen] tb.user_project.
 [sst_width] 297
@@ -17,9 +17,8 @@
 [sst_expanded] 1
 [sst_vpaned_height] 299
 @28
-tb.user_project.ena
 tb.user_project.clk
-@8421
+@8420
 [color] 3
 tb.user_project.sg_0.sin_o[15:0]
 @20000
@@ -35,21 +34,15 @@ tb.user_project.sg_0.cos_o[15:0]
 -
 -
 -
+@22
+tb.user_project.pre_0.pre_i[15:0]
 @28
 tb.user_project.rst_n
 @200
 -Inputs
-@22
-tb.user_project.ui_in[7:0]
-@200
--Bidirectional Pins
-@22
-tb.user_project.uio_in[7:0]
-tb.user_project.uio_oe[7:0]
-tb.user_project.uio_out[7:0]
-@200
--Output Pins
-@22
-tb.user_project.uo_out[7:0]
+@28
+tb.cs
+tb.mosi
+tb.sck
 [pattern_trace] 1
 [pattern_trace] 0

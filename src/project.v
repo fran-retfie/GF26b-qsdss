@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_example (
+module tt_um_franretfie_top (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -16,8 +16,28 @@ module tt_um_example (
     input  wire       rst_n     // reset_n - low to reset
 );
 
+  wire en_o;
+
+  prescaler pre_0 (
+    .pre_i ({ui_in, uio_in}),
+    .sys_clk (clk),    
+    .rst_in (rst_n),   
+    .en_o (en_o) 
+  );
+
+  wire [15:0] sin_o;
+  wire [15:0] cos_o;
+
+  signal_generator sg_0 (
+      .en_i (en_o),    
+      .sys_clk (clk),    
+      .rst_in (rst_n),   
+      .sin_o (sin_o),
+      .cos_o (cos_o)
+  );
+
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
+  assign uo_out  = 0; 
   assign uio_out = 0;
   assign uio_oe  = 0;
 

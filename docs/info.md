@@ -8,6 +8,9 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## How it works
+This project generates two sinusoidal waveforms with a fixed 90° phase offset (I/Q signals) using Direct Digital Synthesis (DDS) techniques.
+The output is presented on output in Pulse Code Modulation via two first order Sigma-Delta modulators.
+DSS block can be prescaled by sending the prescaler value through SPI port.
 
 ![image](scheme.drawio.png)
 

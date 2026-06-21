@@ -1,24 +1,40 @@
 [*]
-[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Mon Nov 20 16:00:28 2023
+[*] GTKWave Analyzer v3.3.127 (w)1999-2026 BSI
+[*] Sun Jun 21 17:15:57 2026
 [*]
-[dumpfile] "/home/uri/p/tt-new-template-proto/test/tb.fst"
-[dumpfile_mtime] "Mon Nov 20 15:58:34 2023"
-[dumpfile_size] 1110
-[savefile] "/home/uri/p/tt-new-template-proto/test/tb.gtkw"
+[dumpfile] "/home/retfie/Documenti/HDL/GF26b-qsdss/test/tb.fst"
+[dumpfile_mtime] "Sun Jun 21 17:10:18 2026"
+[dumpfile_size] 4147
+[savefile] "/home/retfie/Documenti/HDL/GF26b-qsdss/test/tb.gtkw"
 [timestart] 0
-[size] 1376 600
-[pos] -1 -1
-*-24.534533 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1920 1001
+[pos] -27 -24
+*-21.495594 1780000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb.
+[treeopen] tb.user_project.
 [sst_width] 297
 [signals_width] 230
 [sst_expanded] 1
-[sst_vpaned_height] 158
+[sst_vpaned_height] 299
 @28
 tb.user_project.ena
-@29
 tb.user_project.clk
+@8421
+[color] 3
+tb.user_project.sg_0.sin_o[15:0]
+@20000
+-
+-
+-
+-
+@8420
+[color] 3
+tb.user_project.sg_0.cos_o[15:0]
+@20000
+-
+-
+-
+-
 @28
 tb.user_project.rst_n
 @200

@@ -29,7 +29,7 @@ always @(posedge sys_clk or !rst_in) begin
 
         //rising edge of SCK and CS low, shift in data
         if(sck_i & !clk_d & !cs_i) begin
-            sr = {sr[14:0], mosi_i};
+            sr <= {sr[14:0], mosi_i};
         end
     end
 end

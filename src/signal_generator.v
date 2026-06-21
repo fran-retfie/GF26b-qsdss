@@ -28,7 +28,7 @@ always @(posedge sys_clk or !rst_in) begin
     end
 end
 
-assign cos_o = y * 48;
+assign cos_o = y * a_log2;
 assign sin_o = x;
 
 endmodule

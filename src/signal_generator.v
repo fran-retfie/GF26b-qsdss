@@ -7,8 +7,8 @@ module signal_generator (
     output  wire [15:0] cos_o
 );
 
-parameter k_log2 = 13;
-parameter a_log2 = 6;
+parameter k_log2 = 12;
+parameter a_log2 = 48;
 
 reg signed [15:0] x;
 reg signed [15:0] y;
@@ -28,7 +28,7 @@ always @(posedge sys_clk or !rst_in) begin
     end
 end
 
-assign cos_o = y <<< a_log2;
+assign cos_o = y * 48;
 assign sin_o = x;
 
 endmodule

@@ -16,12 +16,30 @@ module tt_um_franretfie_top (
     input  wire       rst_n     // reset_n - low to reset
 );
 
+  // Input resynchronization
+  reg [2:0] ui_d, ui_dd;
+  always @(posedge clk) begin
+    ui_d <= ui_in[2:0];
+    ui_dd <= ui_d;
+  end
+
+  wire [15:0] pre;
+
+  spi spi_0 (
+    .sys_clk (clk),    
+    .rst_in (rst_n),
+    .sck_i (ui_dd[0]), // SCK -> ui_in[0]
+    .mosi_i (ui_dd[2]), // MOSI -> ui_in[21]  
+    .cs_i (ui_dd[1]), // CS -> ui_in[1] 
+    .data_o (pre)
+  );
+
   wire en_o;
 
   prescaler pre_0 (
-    .pre_i ({ui_in, uio_in}),
-    .sys_clk (clk),    
-    .rst_in (rst_n),   
+    .pre_i (pre),
+    .sys_clk (clk),   
+    .rst_in (rst_n),
     .en_o (en_o) 
   );
 

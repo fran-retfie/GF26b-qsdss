@@ -40,6 +40,9 @@ Outputs:
 - Observe sine and cosine analog outputs.
 - Using SPI port, the prescaler `pre[15:0]` cane be loaded with new value allowing for output signals frequency control. After reset prescaler default value is `0x0124` corresponding to 1kHz. In general output frequency is given by rougthly `f_sig = f_clk / pre[15:0] / 400`
 
+### SPI timing diagram
+![image](SPI.png)
+
 ### Output wiring diagram
 ![image](output.drawio.png)
 

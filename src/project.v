@@ -23,11 +23,19 @@ module tt_um_franretfie_top (
     ui_dd <= ui_d;
   end
 
+  // Reset resynchronization
+  reg rst_dn, rst_ddn;
+  always @(posedge clk) begin
+      rst_dn <= rst_n;
+      rst_ddn <= rst_dn;
+  end
+
+
   wire [15:0] pre_w;
 
   spi spi_0 (
     .sys_clk (clk),    
-    .rst_in (rst_n),
+    .rst_in (rst_ddn),
     .sck_i (ui_dd[0]), // SCK -> ui_in[0]
     .mosi_i (ui_dd[2]), // MOSI -> ui_in[21]  
     .cs_i (ui_dd[1]), // CS -> ui_in[1] 
@@ -39,7 +47,7 @@ module tt_um_franretfie_top (
   prescaler pre_0 (
     .pre_i (pre_w),
     .sys_clk (clk),   
-    .rst_in (rst_n),
+    .rst_in (rst_ddn),
     .en_o (en_w) 
   );
 
@@ -49,21 +57,21 @@ module tt_um_franretfie_top (
   signal_generator sg_0 (
       .en_i (en_w),    
       .sys_clk (clk),    
-      .rst_in (rst_n),   
+      .rst_in (rst_ddn),   
       .sin_o (sin_w),
       .cos_o (cos_w)
   );
 
   deltasigma_modulator sdm_0 (
     .clk (clk),
-    .rst_i (rst_n),
+    .rst_i (rst_ddn),
     .sig_i (sin_w),
     .ds_o (uo_out[0])
   );
 
   deltasigma_modulator sdm_1 (
     .clk (clk),
-    .rst_i (rst_n),
+    .rst_i (rst_ddn),
     .sig_i (cos_w),
     .ds_o (uo_out[1])
   );

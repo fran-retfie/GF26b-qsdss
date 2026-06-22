@@ -12,7 +12,7 @@ reg clk_d;
 reg cs_d;
 reg [15:0] sr; //SPI shift register
 
-always @(posedge sys_clk or !rst_in) begin
+always @(posedge sys_clk or negedge rst_in) begin
     clk_d <= sck_i;
     cs_d <= cs_i;
 

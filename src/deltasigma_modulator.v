@@ -10,7 +10,7 @@ module deltasigma_modulator (
     
     assign dac = ds_o ? 17'h08000 : -17'h08000;
     assign ds_o = (integ >= 0);
-    always @(posedge clk or negedge rst_i) begin
+    always @(posedge clk) begin
         if(!rst_i) begin
             integ <= 17'h00000;
         end else begin

@@ -8,7 +8,7 @@ module prescaler (
 
 reg signed [15:0] cnt;
 
-always @(posedge sys_clk or negedge rst_in) begin
+always @(posedge sys_clk) begin
     if(!rst_in) begin
         cnt <= 16'h0000;
         en_o <= 1'b0;

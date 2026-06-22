@@ -16,7 +16,7 @@ reg signed [15:0] y;
 wire signed [15:0] x1;
 assign x1 = x - (x >>> k_log2) + y;
 
-always @(posedge sys_clk or negedge rst_in) begin
+always @(posedge sys_clk) begin
     if(!rst_in) begin
         x <= 16'h7eff;
         y <= 16'h0000;

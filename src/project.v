@@ -68,20 +68,22 @@ module tt_um_franretfie_top (
     .sig_i (sin_w),
     .ds_o (uo_out[0])
   );
+  assign uo_out[1] = !uo_out[0];
 
   deltasigma_modulator sdm_1 (
     .clk (clk),
     .rst_i (rst_ddn),
     .sig_i (cos_w),
-    .ds_o (uo_out[1])
+    .ds_o (uo_out[2])
   );
+  assign uo_out[3] = !uo_out[2];
 
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out[7:2]  = 0; 
+  assign uo_out[7:4]  = 0; 
   assign uio_out = 0;
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, uio_in, ui_in[7:3], 1'b0};
+  wire _unused = &{ena, uio_in, ui_in[7:3], 1'b0};
 
 endmodule
